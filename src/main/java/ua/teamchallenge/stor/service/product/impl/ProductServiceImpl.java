@@ -7,6 +7,8 @@ import ua.teamchallenge.stor.persistence.entity.Product;
 import ua.teamchallenge.stor.persistence.repository.ProductRepository;
 import ua.teamchallenge.stor.service.product.ProductService;
 
+import java.util.List;
+
 @Service
 @Transactional
 @AllArgsConstructor
@@ -15,12 +17,19 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findById(Long id) {
-        return null;
+        return productRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Product with id " + id + " not found"));
     }
+
 
     @Override
     public void create(Product product) {
         productRepository.save(product);
+    }
+
+    @Override
+    public List<Product> findAll() {
+        return productRepository.findAll();
     }
 
 

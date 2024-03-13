@@ -19,7 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Product extends BaseEntity {
     private String title;
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @Cascade(value = {CascadeType.ALL})
     @Column(name = "image")
     private List<String> images;
