@@ -11,8 +11,8 @@
     <groupId>ua.teamchallenge</groupId>
     <artifactId>Stor</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Stor</name>
-    <description>Stor</description>
+    <name>Store</name>
+    <description>Store</description>
 
     <properties>
         <java.version>17</java.version>
