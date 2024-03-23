@@ -1,7 +1,7 @@
-package ua.teamchallenge.stor.facade.product.impl.mapper;
+package ua.teamchallenge.store.facade.product.impl.mapper;
 
-import ua.teamchallenge.stor.api.dto.response.product.ProductDto;
-import ua.teamchallenge.stor.persistence.entity.Product;
+import ua.teamchallenge.store.api.dto.response.product.ProductDto;
+import ua.teamchallenge.store.persistence.entity.Product;
 
 public class ProductDtoMapper {
 

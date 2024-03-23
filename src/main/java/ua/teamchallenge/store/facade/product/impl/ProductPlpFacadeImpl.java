@@ -1,12 +1,12 @@
-package ua.teamchallenge.stor.facade.product.impl;
+package ua.teamchallenge.store.facade.product.impl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import ua.teamchallenge.stor.api.dto.response.product.ProductDto;
-import ua.teamchallenge.stor.facade.product.ProductPlpFacade;
-import ua.teamchallenge.stor.facade.product.impl.mapper.ProductDtoMapper;
-import ua.teamchallenge.stor.persistence.entity.Product;
-import ua.teamchallenge.stor.service.product.ProductService;
+import ua.teamchallenge.store.api.dto.response.product.ProductDto;
+import ua.teamchallenge.store.facade.product.ProductPlpFacade;
+import ua.teamchallenge.store.persistence.entity.Product;
+import ua.teamchallenge.store.service.product.ProductService;
+import ua.teamchallenge.store.facade.product.impl.mapper.ProductDtoMapper;
 
 import java.util.List;
 

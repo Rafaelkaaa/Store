@@ -1,7 +1,7 @@
-package ua.teamchallenge.stor.service.product;
+package ua.teamchallenge.store.service.product;
 
-import ua.teamchallenge.stor.persistence.entity.Product;
-import ua.teamchallenge.stor.service.BaseService;
+import ua.teamchallenge.store.persistence.entity.Product;
+import ua.teamchallenge.store.service.BaseService;
 
 import java.util.List;
 

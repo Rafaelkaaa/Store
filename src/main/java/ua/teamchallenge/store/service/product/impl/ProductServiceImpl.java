@@ -1,11 +1,11 @@
-package ua.teamchallenge.stor.service.product.impl;
+package ua.teamchallenge.store.service.product.impl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ua.teamchallenge.stor.persistence.entity.Product;
-import ua.teamchallenge.stor.persistence.repository.ProductRepository;
-import ua.teamchallenge.stor.service.product.ProductService;
+import ua.teamchallenge.store.persistence.entity.Product;
+import ua.teamchallenge.store.persistence.repository.ProductRepository;
+import ua.teamchallenge.store.service.product.ProductService;
 
 import java.util.List;
 

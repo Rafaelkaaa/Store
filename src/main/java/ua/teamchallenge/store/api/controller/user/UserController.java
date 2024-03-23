@@ -1,4 +1,4 @@
-package ua.teamchallenge.stor.api.controller.user;
+package ua.teamchallenge.store.api.controller.user;
 
 
 import lombok.AllArgsConstructor;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ua.teamchallenge.stor.api.dto.response.product.ProductDto;
-import ua.teamchallenge.stor.facade.product.ProductPdpFacade;
-import ua.teamchallenge.stor.facade.product.ProductPlpFacade;
+import ua.teamchallenge.store.api.dto.response.product.ProductDto;
+import ua.teamchallenge.store.facade.product.ProductPdpFacade;
+import ua.teamchallenge.store.facade.product.ProductPlpFacade;
 
 import java.util.List;
 

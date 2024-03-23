@@ -1,4 +1,4 @@
-package ua.teamchallenge.stor.api.dto.response.product;
+package ua.teamchallenge.store.api.dto.response.product;
 
 import lombok.Builder;
 import lombok.Data;
