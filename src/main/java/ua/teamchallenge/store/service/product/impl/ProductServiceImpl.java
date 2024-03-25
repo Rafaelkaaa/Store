@@ -3,11 +3,11 @@ package ua.teamchallenge.store.service.product.impl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import ua.teamchallenge.store.persistence.entity.Product;
 import ua.teamchallenge.store.persistence.repository.ProductRepository;
 import ua.teamchallenge.store.service.product.ProductService;
-
-import java.util.List;
 
 @Service
 @Transactional
@@ -19,7 +19,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product findById(Long id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Product with id " + id + " not found"));
+                .switchIfEmpty(Mono.error(new IllegalArgumentException("Product with id " + id + " not found")))
+                .block();
     }
 
 
@@ -29,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> findAll() {
+    public Flux<Product> findAll() {
         return productRepository.findAll();
     }
 

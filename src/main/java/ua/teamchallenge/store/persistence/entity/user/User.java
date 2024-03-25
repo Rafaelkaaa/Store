@@ -1,7 +1,7 @@
 package ua.teamchallenge.store.persistence.entity.user;
 
-import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ua.teamchallenge.store.persistence.entity.BaseEntity;
@@ -10,7 +10,7 @@ import ua.teamchallenge.store.persistence.type.RoleType;
 import java.util.Collection;
 
 @Data
-@Entity
+@Table
 @EqualsAndHashCode(callSuper = true)
 public class User extends BaseEntity implements UserDetails {
 
@@ -20,8 +20,6 @@ public class User extends BaseEntity implements UserDetails {
     private Boolean accountNonLocked;
     private Boolean credentialsNonExpired;
     private Boolean enabled;
-
-    @Enumerated(EnumType.STRING)
     private RoleType roleType;
 
     public User() {

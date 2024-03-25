@@ -33,7 +33,7 @@ public class AuthenticationService {
         Personal personal = new Personal();
         personal.setLogin(registerDto.getLogin());
         personal.setPassword(passwordEncoder.encode(registerDto.getPassword()));
-        personal = personalRepository.save(personal);
+        personal = personalRepository.save(personal).block();
         String jwtToken = jwtService.generateToken(personal);
         Token token = new Token();
         token.setToken(jwtToken);

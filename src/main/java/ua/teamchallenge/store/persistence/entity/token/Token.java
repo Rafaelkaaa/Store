@@ -1,13 +1,13 @@
 package ua.teamchallenge.store.persistence.entity.token;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.data.relational.core.mapping.Table;
 import ua.teamchallenge.store.persistence.entity.BaseEntity;
 import ua.teamchallenge.store.persistence.entity.user.User;
 
 @Data
-@Entity
+@Table
 @EqualsAndHashCode(callSuper = true)
 public class Token extends BaseEntity {
 
@@ -15,7 +15,6 @@ public class Token extends BaseEntity {
 
     public Boolean expired;
 
-    @ManyToOne
     public User user;
 
     public Token() {
