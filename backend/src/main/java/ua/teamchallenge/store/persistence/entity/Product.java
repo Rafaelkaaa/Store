@@ -1,17 +1,13 @@
 package ua.teamchallenge.store.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import lombok.*;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-@Entity
+@Table
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Builder
@@ -19,9 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Product extends BaseEntity {
     private String title;
-    @ElementCollection(fetch = FetchType.EAGER)
-    @Cascade(value = {CascadeType.ALL})
-    @Column(name = "image")
+    @Column("image")
     private List<String> images;
     private BigDecimal price;
     private String description;

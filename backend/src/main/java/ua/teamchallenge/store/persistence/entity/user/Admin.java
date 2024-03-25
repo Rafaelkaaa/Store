@@ -1,11 +1,9 @@
 package ua.teamchallenge.store.persistence.entity.user;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import org.springframework.data.relational.core.mapping.Table;
 import ua.teamchallenge.store.persistence.type.RoleType;
 
-@Entity
-@DiscriminatorValue("ADMIN")
+@Table
 public class Admin extends User {
 
     public Admin() {

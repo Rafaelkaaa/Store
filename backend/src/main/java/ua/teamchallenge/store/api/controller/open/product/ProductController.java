@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 import ua.teamchallenge.store.api.dto.response.product.ProductDto;
 import ua.teamchallenge.store.facade.product.ProductPdpFacade;
 import ua.teamchallenge.store.facade.product.ProductPlpFacade;
-
-import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -23,9 +22,8 @@ public class ProductController {
 
     // get all products
     @GetMapping("/products")
-    public ResponseEntity<List<ProductDto>> getProducts() {
-        List<ProductDto> products = productPlpFacade.findAllProducts();
-        return ResponseEntity.status(HttpStatus.OK).body(products);
+    public Flux<ProductDto> getProducts() {
+        return productPlpFacade.findAllProducts();
     }
 
     // get one product
