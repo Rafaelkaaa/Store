@@ -12,8 +12,7 @@ const CardList: React.FC = () => {
       width={1064}
       alignItems='flex-start'
       alignContent='flex-start'
-      flexWrap='wrap'
-      m={45}>
+      flexWrap='wrap'>
       {cards.map((card) => (
         <ProductCard key={card.id} {...card} />
       ))}

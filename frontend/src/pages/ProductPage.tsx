@@ -1,20 +1,22 @@
-import {Box} from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Header from "../components/Header.tsx";
 import CardList from "../components/CardList/CardList.tsx";
 import { Provider } from "react-redux";
 import store from "../features/store/store.ts";
+import Categories from "../components/Categories/Categories.tsx";
 
 const ProductPage: React.FC = () => {
   return (
     <Box>
       <Header />
-      <Box display='flex' flexDir='column' alignItems='center'>
+      <Flex  gap={"45px"} justifyContent={'center'} m={'90px 0'}>
         <Provider store={store}>
+          <Categories />
           <CardList />
         </Provider>
-      </Box>
+      </Flex>
     </Box>
-  )
-}
+  );
+};
 
-export default ProductPage
+export default ProductPage;

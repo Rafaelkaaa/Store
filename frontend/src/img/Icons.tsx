@@ -19,22 +19,27 @@ export const HeartIcon = () => {
   );
 };
 
-export const PlusIcon = () => {
+export const AddedIcon = () => {
   return (
     <>
       <svg
-        width='19'
-        height='18'
-        viewBox='0 0 19 18'
+        width='26'
+        height='27'
+        viewBox='0 0 28 28'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'>
-        <g id='icon'>
+        <g id='Icon:yes' clip-path='url(#clip0_469_16433)'>
           <path
-            id='icon_2'
-            d='M15.5 9.75H10.25V15H8.75V9.75H3.5V8.25H8.75V3H10.25V8.25H15.5V9.75Z'
-            fill='white'
+            id='Vector'
+            d='M14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0ZM20.0071 6.55737L22.9157 9.46605L13.8308 18.5528L10.9392 21.4426L8.03052 18.5339L5.08422 15.5859L7.97412 12.696L10.9204 15.644L20.0071 6.55737Z'
+            fill='#45992F'
           />
         </g>
+        <defs>
+          <clipPath id='clip0_469_16433'>
+            <rect width='28' height='28' fill='white' />
+          </clipPath>
+        </defs>
       </svg>
     </>
   );
