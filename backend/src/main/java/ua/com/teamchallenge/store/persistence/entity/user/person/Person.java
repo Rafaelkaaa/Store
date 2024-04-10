@@ -1,11 +1,11 @@
-package ua.com.teamchallenge.store.persistence.entity.user.personal;
+package ua.com.teamchallenge.store.persistence.entity.user.person;
 
 import ua.com.teamchallenge.store.persistence.entity.user.User;
 import ua.com.teamchallenge.store.persistence.type.RoleType;
 
-public class Personal extends User {
+public class Person extends User {
 
-    public Personal() {
+    public Person() {
         super();
         setRoleType(RoleType.PERSONAL);
     }

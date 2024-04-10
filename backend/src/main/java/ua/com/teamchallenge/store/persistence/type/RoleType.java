@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 public enum RoleType {
 
     PERSONAL(Set.of(
-            PermissionType.PERSONAL_CREATE,
-            PermissionType.PERSONAL_READ,
-            PermissionType.PERSONAL_UPDATE,
-            PermissionType.PERSONAL_DELETE)),
+            PermissionType.PERSON_CREATE,
+            PermissionType.PERSON_READ,
+            PermissionType.PERSON_UPDATE,
+            PermissionType.PERSON_DELETE)),
     ADMIN(Set.of(
             PermissionType.ADMIN_CREATE,
             PermissionType.ADMIN_READ,
