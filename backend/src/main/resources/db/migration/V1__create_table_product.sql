@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS product
+CREATE TABLE IF NOT EXISTS products
 (
     id          SERIAL PRIMARY KEY,
     title       VARCHAR(100)     NOT NULL,
