@@ -2,6 +2,7 @@ package ua.com.teamchallenge.store.api.dto.response.product;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import ua.com.teamchallenge.store.api.dto.response.BaseResponseDto;
 import ua.com.teamchallenge.store.persistence.entity.product.Product;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
 public class ProductDto extends BaseResponseDto {
 
     private String title;

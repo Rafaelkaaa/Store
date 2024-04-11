@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a07ca328-fe1a-4eb1-91a9-e338dd5d411d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ua/com/teamchallenge/store/config/security/AuthorizationSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ua/com/teamchallenge/store/config/security/AuthorizationSecurityConfig.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/backend">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2expJ9CplqseCap6ldbsTBBtf7k" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Admin/Downloads/httpcomponents-client-5.2.1-bin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.21954022",
+    "spring.configuration.checksum": "2670d15e6f77eacf05c249c11bbabd59",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="StoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="POSTGRESQL_LINK_REACTIVE" value="r2dbc:postgresql://localhost:5432/store" />
+        <env name="POSTGRESQL_PASSWORD" value="1234" />
+        <env name="POSTGRESQL_USERNAME" value="postgres" />
+      </envs>
+      <module name="ua.com.teamchallenge.Store.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ua.com.teamchallenge.store.StoreApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.teamchallenge.store.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.StoreApplication" />
+        <item itemvalue="Application.StoreApplication" />
+        <item itemvalue="Application.StoreApplication" />
+        <item itemvalue="Application.StoreApplication" />
+        <item itemvalue="Application.StoreApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a07ca328-fe1a-4eb1-91a9-e338dd5d411d" name="Changes" comment="" />
+      <created>1712856008872</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712856008872</updated>
+      <workItem from="1712856010164" duration="657000" />
+      <workItem from="1712858106877" duration="234000" />
+      <workItem from="1712858345415" duration="8360000" />
+      <workItem from="1712869087786" duration="10000" />
+      <workItem from="1712869100180" duration="28000" />
+      <workItem from="1712869130753" duration="103000" />
+      <workItem from="1712869241552" duration="92000" />
+      <workItem from="1712869336206" duration="154000" />
+      <workItem from="1712869492540" duration="403000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

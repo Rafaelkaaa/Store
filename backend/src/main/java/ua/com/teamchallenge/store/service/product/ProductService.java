@@ -12,4 +12,8 @@ public interface ProductService extends BaseService<Product>, FindAllService<Pro
     Mono<Product> create(Product product);
 
     Flux<ProductImage> getProductImages(Long productId);
+
+    Mono<Void> saveProductImages(Long productId, Flux<ProductImage> productImages);
+
+    Mono<ProductImage> saveProductImage(Long productId, String imageUrl);
 }
