@@ -35,6 +35,22 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Mono<Void> saveProductImages(Long productId, Flux<ProductImage> productImages) {
+        return productImages.flatMap(productImage -> productRepository.saveProductImage(productImage))
+                .then(productRepository.getProductImages(productId).then());
+    }
+
+
+    @Override
+    public Mono<ProductImage> saveProductImage(Long productId, String imageUrl) {
+        ProductImage productImage = ProductImage.builder()
+                .imageUrl(imageUrl)
+                .productId(productId)
+                .build();
+        return productRepository.saveProductImage(productImage);
+    }
+
+    @Override
     public Flux<Product> findAll() {
         return productRepository.findAll();
     }
