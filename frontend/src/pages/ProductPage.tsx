@@ -1,5 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import Header from "../components/Header.tsx";
+import Header from "../components/Header/Header.tsx";
 import CardList from "../components/CardList/CardList.tsx";
 import { Provider } from "react-redux";
 import store from "../features/store/store.ts";

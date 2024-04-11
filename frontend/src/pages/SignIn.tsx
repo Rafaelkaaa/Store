@@ -2,16 +2,8 @@ import {
 	Flex,
 	Heading,
 	Image,
-	FormControl,
-	FormLabel,
-	Input,
 	Checkbox,
 	Link,
-	Button,
-	Text,
-	Box,
-	Divider,
-	AbsoluteCenter,
 } from '@chakra-ui/react'
 import signIn_bg from '../img/signIn-bg.jpg'
 import logo from '../img/DigiDive.svg'

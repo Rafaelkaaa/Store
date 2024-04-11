@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "Smart Home Security Solutions"
+  },
+  {
+    "id": 2,
+    "category": "Smart Office Solution"
+  },
+  {
+    "id": 3,
+    "category": "Lighting and Lighting Technology"
+  },
+  {
+    "id": 4,
+    "category": "Audio - Video"
+  },
+  {
+    "id": 5,
+    "category": "Smart Pool Automation"
+  },
+  {
+    "id": 6,
+    "category": "Smart Home Devices"
+  },
+  {
+    "id": 7,
+    "category": "Smart Home Systems"
+  },
+  {
+    "id": 8,
+    "category": "Building Automation System"
+  },
+  {
+    "id": 9,
+    "category": "Fire Protection Systems"
+  }
+]
