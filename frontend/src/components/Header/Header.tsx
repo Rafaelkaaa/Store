@@ -12,16 +12,16 @@ import HeaderInput from "./HeaderInput.tsx";
 import HeaderSwitchLang from "./HeaderSwitchLang.tsx";
 import ChevronDown from "../../img/chevron-down.png";
 import HeaderMenuProducts from "./HeaderMenuProducts.tsx";
+
 const Header: React.FC = () => {
-    console.log('Checked!!!!')
     return (
-        <Box bg='#191D24' position='relative'>
-            <Flex as='header' color='#F9F9F9' margin='0 auto' position='relative'
-                  gap='33px' align='center' maxWidth='1600px' p='16px 123px 15px 106px'  alignItems='center' >
+        <Box bg='#191D24' position='relative' as='header'>
+            <Flex color='#F9F9F9' margin='0 auto' position='relative'
+                  gap='33px' align='center' maxWidth='1600px' p='16px 123px 15px 106px' alignItems='center'>
                 <Box>
                     <Image src={Logo} alt='Logo' w='200px' h='60px'/>
                 </Box>
-               <HeaderMenuProducts />
+                <HeaderMenuProducts/>
                 <Menu>
                     <MenuButton as={Button} p='0' rightIcon={<Image src={ChevronDown} alt='chevronDown'/>}
                                 fontSize='16px'

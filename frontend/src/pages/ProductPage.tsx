@@ -4,6 +4,7 @@ import CardList from "../components/CardList/CardList.tsx";
 import { Provider } from "react-redux";
 import store from "../features/store/store.ts";
 import Categories from "../components/Categories/Categories.tsx";
+import Footer from "../components/Footer/Footer.tsx";
 
 const ProductPage: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const ProductPage: React.FC = () => {
           <CardList />
         </Provider>
       </Flex>
+        <Footer />
     </Box>
   );
 };
