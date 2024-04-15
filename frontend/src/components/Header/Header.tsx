@@ -25,7 +25,6 @@ const Header: React.FC = () => {
                 <Menu>
                     <MenuButton as={Button} p='0' rightIcon={<Image src={ChevronDown} alt='chevronDown'/>}
                                 fontSize='16px'
-                                fontFamily='Inter'
                                 fontWeight='400' bg='#191D24' color='rgba(249, 249, 249, 1)'
                                 _hover={{bg: '#191D24'}}
                                 _active={{bg: '#191D24'}} _focus={{bg: '#191D24'}}>
@@ -35,7 +34,6 @@ const Header: React.FC = () => {
                 <Menu>
                     <MenuButton as={Button} p='0' rightIcon={<Image src={ChevronDown} alt='chevronDown'/>}
                                 fontSize='16px'
-                                fontFamily='Inter'
                                 fontWeight='400' bg='#191D24' color='rgba(249, 249, 249, 1)'
                                 _hover={{bg: '#191D24', border: 'none'}}
                                 _active={{bg: '#191D24'}} _focus={{bg: '#191D24'}}>
@@ -48,7 +46,7 @@ const Header: React.FC = () => {
                 <Box>
                     <HeaderSwitchLang/>
                 </Box>
-                <Flex gap='16px' align='center' fontFamily='Inter'>
+                <Flex gap='16px' align='center'>
                     <Flex align='center' direction='column' w='48px' textAlign='center'
                           marginTop='auto' paddingBottom='6px'>
                         <Image src={LoginIcon} alt='LoginIcon'/>

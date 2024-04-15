@@ -32,12 +32,13 @@ const ProductCard: React.FC<CardProps> = ({
         </Heading>
         <Flex gap='8px' flexDir='column'>
           <Text
-            maxW={230}
-            p='0 15px 0'
+            maxW={200}
+            m='0 15px 0'
             color={"#464646"}
             fontSize={16}
             fontWeight='600'
-            lineHeight='130%'>
+            lineHeight='130%'
+            letterSpacing={'-0.48px'}>
             {description}
           </Text>
           <Flex fontSize='18px' alignSelf='center' color={"#464646"}>

@@ -22,7 +22,6 @@ const HeaderMenuProducts: React.FC = () => {
         <Menu isOpen={isOpen}>
             <Button as={Button} p='0' rightIcon={<Image src={ChevronDown} alt='chevronDown'/>}
                     fontSize='16px'
-                    fontFamily='Inter'
                     fontWeight='400' bg='#191D24' color='rgba(249, 249, 249, 1)'
                     _hover={{bg: '#191D24', color: '#9169F7', textDecoration: 'underline'}}
                     _active={{bg: '#191D24'}}
@@ -35,7 +34,7 @@ const HeaderMenuProducts: React.FC = () => {
 
             <Box className={`${s.dropdown} ${isOpen ? s.open : ''}`} onMouseLeave={handleClose} position='absolute'
                  top='92px' w='1370px' transform='translateX(-50%)' left='50%' padding='23px 71px 37px 34px'
-                 borderRadius='0px 0px 16px 16px' color='#000' bg='#fff' zIndex={1}>
+                 borderRadius='0px 0px 16px 16px' color='#000' bg='#fff'>
                 <Flex gap='68px'>
                     <Box>
                         {categories.map((category) => (

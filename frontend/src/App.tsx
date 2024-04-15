@@ -4,11 +4,12 @@ import ErrorPage from './pages/ErrorPage'
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage.tsx'
 import SignIn from './pages/SignIn.tsx'
+import theme from './components/ChakraTheme/theme.tsx'
 
 function App() {
 	return (
 		<>
-			<ChakraProvider>
+			<ChakraProvider theme={theme}>
 				<BrowserRouter>
 					<Routes>
 						<Route path='/' element={<HomePage />} />
