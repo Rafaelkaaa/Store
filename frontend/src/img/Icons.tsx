@@ -44,3 +44,40 @@ export const AddedIcon = () => {
     </>
   );
 };
+
+export const HomeIcon = () => {
+  return (
+    <>
+      <svg
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'>
+        <g id='iconoir:home'>
+          <path
+            id='Vector'
+            d='M2 8L11.732 3.134C11.8152 3.09245 11.907 3.07082 12 3.07082C12.093 3.07082 12.1848 3.09245 12.268 3.134L22 8M20 11V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21H6C5.46957 21 4.96086 20.7893 4.58579 20.4142C4.21071 20.0391 4 19.5304 4 19V11'
+            stroke='url(#paint0_linear_391_7883)'
+            stroke-width='1.5'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+          />
+        </g>
+        <defs>
+          <linearGradient
+            id='paint0_linear_391_7883'
+            x1='2'
+            y1='4.83435'
+            x2='23.1195'
+            y2='5.80076'
+            gradientUnits='userSpaceOnUse'>
+            <stop stop-color='#5FD8FF' />
+            <stop offset='0.644117' stop-color='#9969FF' />
+            <stop offset='1' stop-color='#704FE5' />
+          </linearGradient>
+        </defs>
+      </svg>
+    </>
+  );
+};
