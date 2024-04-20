@@ -17,7 +17,7 @@ const PriceFilter = () => {
         <>
           <h2>
             <AccordionButton p={"18px 16px 18px 4px"}>
-              <Box as='span' flex='1' textAlign='left' fontWeight='500'>
+              <Box as='span' flex='1' textAlign='left' fontWeight='600'>
                 Price
               </Box>
               {isExpanded ? (
