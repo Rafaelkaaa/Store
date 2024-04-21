@@ -3,9 +3,11 @@ package ua.com.teamchallenge.store.config.security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 import ua.com.teamchallenge.store.api.dto.auth.RegisterDto;
 import ua.com.teamchallenge.store.api.dto.response.auth.AuthDto;
 import ua.com.teamchallenge.store.persistence.entity.token.Token;
@@ -19,6 +21,7 @@ import ua.com.teamchallenge.store.persistence.repository.user.person.PersonRepos
 @RequiredArgsConstructor
 public class AuthenticationService {
 
+    private final ReactiveUserDetailsService userDetailsService;
     private final ReactiveAuthenticationManager authenticationManager;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
@@ -45,28 +48,36 @@ public class AuthenticationService {
     }
 
     public Mono<AuthDto> register(RegisterDto registerDto) {
+
         return userRepository.existsByLogin(registerDto.getLogin())
                 .flatMap(exists -> {
-                    if (exists) {
+                    if (!exists) {
                         return Mono.error(new RuntimeException("This email has already been used"));
                     } else {
-                        return Mono.just(new Person())
-                                .doOnNext(person -> {
-                                    person.setLogin(registerDto.getLogin());
-                                    person.setPassword(passwordEncoder.encode(registerDto.getPassword()));
-                                })
-                                .flatMap(person -> personRepository.save(person)
-                                        .then(Mono.defer(() -> {
-                                            Mono<String> jwtTokenMono = jwtService.generateToken(person);
-                                            return jwtTokenMono.flatMap(jwtToken -> {
-                                                Token token = new Token();
-                                                token.setToken(jwtToken);
-                                                token.setUserId(person.getId());
-                                                return tokenRepository.save(token)
-                                                        .thenReturn(new AuthDto(jwtToken));
-                                            });
-                                        })));
+                        return createNewUser(registerDto);
                     }
                 });
     }
+
+
+    private Mono<AuthDto> createNewUser(RegisterDto registerDto) {
+
+        Person person = new Person();
+        person.setLogin(registerDto.getLogin());
+        person.setPassword(passwordEncoder.encode(registerDto.getPassword()));
+
+        return personRepository.save(person)
+                .publishOn(Schedulers.boundedElastic())
+                .flatMap(savedPerson -> {
+                    Mono<String> jwtTokenMono = jwtService.generateToken(savedPerson);
+                    Token token = new Token();
+                    token.setToken(jwtTokenMono.block());
+                    token.setUserId(savedPerson.getId());
+
+                    return tokenRepository.save(token)
+                            .thenReturn(new AuthDto(token.getToken()));
+                });
+    }
+
+
 }

@@ -4,6 +4,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,9 @@ import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 import ua.com.teamchallenge.store.util.SecurityUtil;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -24,7 +27,8 @@ public class JwtAuthenticationFilter implements WebFilter {
 
     @NonNull
     @Override
-    public Mono<Void> filter(ServerWebExchange exchange, @NonNull WebFilterChain chain) {
+    public Mono<Void> filter(ServerWebExchange exchange,
+                             @NonNull WebFilterChain chain) {
         String ipAddress = Objects.requireNonNull(exchange.getRequest().getRemoteAddress()).getAddress().getHostAddress();
         String userAgent = exchange.getRequest().getHeaders().getFirst("User-Agent");
         String path = exchange.getRequest().getPath().value();
@@ -39,6 +43,7 @@ public class JwtAuthenticationFilter implements WebFilter {
         }
 
         String jwt = authHeader.substring(7);
+        List<String> roles = jwtService.getRoles(jwt);
         String login = jwtService.extractUsername(jwt);
 
         if (StringUtils.isNotBlank(login) && !SecurityUtil.isAuthenticated()) {
@@ -47,7 +52,7 @@ public class JwtAuthenticationFilter implements WebFilter {
                         if (jwtService.isNotExpiredToken(jwt)) {
                             var authToken =
                                     new UsernamePasswordAuthenticationToken(
-                                            userDetails, null, userDetails.getAuthorities());
+                                            userDetails, null, roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
                             authToken.setDetails(new WebAuthenticationDetails(ipAddress, userAgent));
                             SecurityUtil.setAuthentication(authToken);
                             return chain.filter(exchange);
