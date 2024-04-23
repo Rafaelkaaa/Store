@@ -1,5 +1,5 @@
 import { Flex, Heading, Image, Checkbox, Link } from '@chakra-ui/react'
-import signIn_bg from '../img/signIn-bg.jpg'
+import signUp_bg from '../img/signup_bg.png'
 import logo from '../img/DigiDive.svg'
 
 import SignButton from '../components/SignIn_Up/SignButton'
@@ -25,7 +25,7 @@ const SignIn: React.FC = () => {
 				justify='space-between'
 			>
 				<Flex
-					bg={`url(${signIn_bg}) center no-repeat`}
+					bg={`url(${signUp_bg}) center no-repeat`}
 					bgSize='cover'
 					maxW='440px'
 					w='100%'
@@ -46,7 +46,7 @@ const SignIn: React.FC = () => {
 				>
 					<Image src={logo} />
 					<Heading mt='40px' fontSize='26px'>
-						Log In
+						Create an account
 					</Heading>
 					<SignForm />
 					<Flex justify='space-between' mt='10px' w='100%'>
@@ -55,7 +55,7 @@ const SignIn: React.FC = () => {
 							Forgot password
 						</Link>
 					</Flex>
-					<SignButton>Log in</SignButton>
+					<SignButton>Create account</SignButton>
 					<SignSubText />
 					<SignLinks />
 				</Flex>

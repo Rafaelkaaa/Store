@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react'
 
-const SignButton = () => {
+const SignButton: React.FC<any> = ({ children }) => {
 	return (
 		<>
 			<Button
@@ -14,7 +14,7 @@ const SignButton = () => {
 					top: '2px',
 				}}
 			>
-				Log in
+				{children}
 			</Button>
 		</>
 	)
