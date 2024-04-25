@@ -7,10 +7,10 @@ import {
 	Divider,
 	Text,
 } from '@chakra-ui/react'
-import google from '../../img/google.svg'
-import facebook from '../../img/logos_facebook.svg'
-import apple from '../../img/apple.svg'
-import github from '../../img/mingcute_github-fill.svg'
+import google from '../../assets/img/google.svg'
+import facebook from '../../assets/img/logos_facebook.svg'
+import apple from '../../assets/img/apple.svg'
+import github from '../../assets/img/mingcute_github-fill.svg'
 
 const SignLinks: React.FC = () => {
 	return (

@@ -1,6 +1,6 @@
 import { Flex, Heading, Image, Checkbox, Link } from '@chakra-ui/react'
-import signIn_bg from '../img/signIn-bg.jpg'
-import logo from '../img/DigiDive.svg'
+import signIn_bg from '../assets/img/signIn-bg.jpg'
+import logo from '../assets/img/DigiDive.svg'
 
 import SignButton from '../components/SignIn_Up/SignButton'
 import SignLinks from '../components/SignIn_Up/SignLinks'

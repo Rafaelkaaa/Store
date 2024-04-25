@@ -1,9 +1,9 @@
 import {Flex, Image, Text} from "@chakra-ui/react";
-import Logo from "../../img/logo.png";
-import InstagramLogo from "../../img/instagram.svg";
-import YouTubeLogo from "../../img/youtube.svg";
-import LinkedInLogo from "../../img/linkedIn.svg";
-import TwitterLogo from "../../img/twitter.svg";
+import Logo from "../../assets/img/logo.png";
+import InstagramLogo from "../../assets/img/instagram.svg";
+import YouTubeLogo from "../../assets/img/youtube.svg";
+import LinkedInLogo from "../../assets/img/linkedIn.svg";
+import TwitterLogo from "../../assets/img/twitter.svg";
 
 const FooterWelcomeSection: React.FC = () => {
     return (

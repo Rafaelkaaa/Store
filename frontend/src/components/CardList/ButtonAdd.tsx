@@ -1,6 +1,6 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { AddedIcon } from "../../img/Icons";
+import { AddedIcon } from "../../assets/img/Icons";
 import { AddIcon } from "@chakra-ui/icons";
 
 const ButtonAdd = () => {

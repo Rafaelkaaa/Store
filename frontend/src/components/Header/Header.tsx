@@ -5,12 +5,12 @@ import {
     Image, Menu, MenuButton
 
 } from "@chakra-ui/react";
-import Logo from '../../img/logo.png'
-import LoginIcon from '../../img/login.png'
-import BasketIcon from '../../img/basket.png'
+import Logo from '../../assets/img/logo.png'
+import LoginIcon from '../../assets/img/login.png'
+import BasketIcon from '../../assets/img/basket.png'
 import HeaderInput from "./HeaderInput.tsx";
 import HeaderSwitchLang from "./HeaderSwitchLang.tsx";
-import ChevronDown from "../../img/chevron-down.png";
+import ChevronDown from "../../assets/img/chevron-down.png";
 import HeaderMenuProducts from "./HeaderMenuProducts.tsx";
 
 const Header: React.FC = () => {

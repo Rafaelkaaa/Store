@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
-import { HomeIcon } from "../../img/Icons";
+import { HomeIcon } from "../../assets/img/Icons";
 
 interface BreadcrumbsProps {
   secondPage: string;

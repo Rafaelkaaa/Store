@@ -1,18 +1,18 @@
 import {Box, Button, Flex, Image, Menu, MenuItem} from "@chakra-ui/react";
-import ChevronDown from "../../img/chevron-down.png";
+import ChevronDown from "../../assets/img/chevron-down.png";
 import s from "./Header.module.css";
 import categories from "../../data/categoryHeader.json";
-import menuBackground from "../../img/menuBackground.png";
+import menuBackground from "../../assets/img/menuBackground.png";
 import React, {useState} from "react";
-import imageCategory01 from "./../../img/headerCategoriesImages/categoryImage01.png"
-import imageCategory02 from "./../../img/headerCategoriesImages/categoryImage02.png"
-import imageCategory03 from "./../../img/headerCategoriesImages/categoryImage03.png"
-import imageCategory04 from "./../../img/headerCategoriesImages/categoryImage04.png"
-import imageCategory05 from "./../../img/headerCategoriesImages/categoryImage05.png"
-import imageCategory06 from "./../../img/headerCategoriesImages/categoryImage06.png"
-import imageCategory07 from "./../../img/headerCategoriesImages/categoryImage07.png"
-import imageCategory08 from "../../img/headerCategoriesImages/categoryImage08.png"
-import imageCategory09 from "../../img/headerCategoriesImages/categoryImage09.png"
+import imageCategory01 from "./../../assets/img/headerCategoriesImages/categoryImage01.png"
+import imageCategory02 from "./../../assets/img/headerCategoriesImages/categoryImage02.png"
+import imageCategory03 from "./../../assets/img/headerCategoriesImages/categoryImage03.png"
+import imageCategory04 from "./../../assets/img/headerCategoriesImages/categoryImage04.png"
+import imageCategory05 from "./../../assets/img/headerCategoriesImages/categoryImage05.png"
+import imageCategory06 from "./../../assets/img/headerCategoriesImages/categoryImage06.png"
+import imageCategory07 from "./../../assets/img/headerCategoriesImages/categoryImage07.png"
+import imageCategory08 from "../../assets/img/headerCategoriesImages/categoryImage08.png"
+import imageCategory09 from "../../assets/img/headerCategoriesImages/categoryImage09.png"
 
 const HeaderMenuProducts: React.FC = () => {
     const [isOpen, changeOpen] = useState(false);

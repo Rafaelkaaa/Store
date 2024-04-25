@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Heading, Img, Text } from "@chakra-ui/react";
-import { HeartIcon } from "../../img/Icons";
+import { HeartIcon } from "../../assets/img/Icons";
 import ButtonAdd from "./ButtonAdd";
 
 interface CardProps {

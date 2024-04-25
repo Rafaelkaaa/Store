@@ -1,5 +1,5 @@
 import {Box, Button, Image, Input, InputGroup, InputLeftElement} from "@chakra-ui/react";
-import SearchIcon from "../../img/search.png";
+import SearchIcon from "../../assets/img/search.png";
 import React from "react";
 
 const HeaderInput: React.FC = () => {
