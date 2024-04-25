@@ -1,6 +1,6 @@
 import { Box, Center, Divider, Flex, Img, Text } from "@chakra-ui/react";
 
-import cameraCategory from "../../img/cameraCategoryImg.png";
+import cameraCategoryImg from "../../img/cameraCategoryImg.png";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 
@@ -9,7 +9,7 @@ const Categories: React.FC = () => {
     <Flex gap={"50px"}>
       <Flex>
         <Flex flexDir={"column"} mr={"21px"} gap={"24px"} p={"20px"} bg='#F8F9FA' borderRadius='16px'>
-          <Img src={cameraCategory} />
+          <Img src={cameraCategoryImg} />
           <Text
             fontWeight={"600"}
             bgGradient='linear(to-r, #5FD8FF 0%, #9969FF 50%, #FF4B4B 100%)'

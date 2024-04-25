@@ -43,7 +43,7 @@ const ProductCard: React.FC<CardProps> = ({
           </Text>
           <Flex fontSize='18px' alignSelf='center' color={"#464646"}>
             ${" "}
-            {sale > 0 ? (
+            {sale? (
               <span>
                 {sale}{" "}
                 <del style={{ fontSize: "14px", color: "#919191" }}>
