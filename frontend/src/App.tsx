@@ -4,7 +4,7 @@ import ErrorPage from './pages/ErrorPage'
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage.tsx'
 import SignIn from './pages/SignIn.tsx'
-import theme from './components/ChakraTheme/theme.tsx'
+import theme from './theme.tsx'
 import SignUp from './pages/SignUp.tsx'
 
 function App() {

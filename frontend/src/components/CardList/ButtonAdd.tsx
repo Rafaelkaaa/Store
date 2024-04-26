@@ -21,7 +21,6 @@ const ButtonAdd = () => {
           gap='8px'
           color='#1D1D1D'
           border={"2px solid #7EB96A"}
-          background={"#fff"}
           alignItems='center'
           borderRadius='8px'
           onClick={handleClick}>
@@ -42,6 +41,10 @@ const ButtonAdd = () => {
           alignItems='center'
           borderRadius='8px'
           bgGradient='linear(to-r, #5FD8FF 0.39%, #9969FF 65.86%, #704FE5 102.04%)'
+          _hover={{
+            bg: "linear-gradient(92deg, #5FD8FF 0.39%, #9969FF 65.86%, #704FE5 102.04%)",
+            top: "2px",
+          }}
           onClick={handleClick}>
           <Flex gap={"6px"} alignItems={"center"}>
             <Text>Add</Text>
@@ -54,6 +57,3 @@ const ButtonAdd = () => {
 };
 
 export default ButtonAdd;
-
-// import google from '../../img/google.svg'
-//  <Image src={google} />
