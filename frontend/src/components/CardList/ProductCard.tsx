@@ -1,4 +1,4 @@
-import { Box, Button, Fade, Flex, Heading, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Img, Text } from "@chakra-ui/react";
 import { HeartIcon } from "../../assets/img/Icons";
 import ButtonAdd from "./ButtonAdd";
 import testImg1 from "../../assets/img/testProduct1.png";

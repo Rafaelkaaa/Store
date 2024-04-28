@@ -1,5 +1,5 @@
 import {Box, Button, Flex, Image, Menu, MenuItem} from "@chakra-ui/react";
-import ChevronDown from "../../assets/img/chevron-down.png";
+import chevronDown from "../../assets/img/chevron-down.png";
 import s from "./Header.module.css";
 import categories from "../../data/categoryHeader.json";
 import menuBackground from "../../assets/img/menuBackground.png";
@@ -48,7 +48,7 @@ const HeaderMenuProducts: React.FC = () => {
             <Button
                 as={Button}
                 p='0'
-                rightIcon={<Image src={ChevronDown} alt='chevronDown'/>}
+                rightIcon={<Image src={chevronDown} alt='chevronDown'/>}
                 fontSize='16px'
                 fontWeight='400'
                 bg='#191D24'
