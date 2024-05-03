@@ -24,32 +24,43 @@ public class JwtService {
     @Value("${application.security.jwt.secret-key}")
     private String secretKey;
 
+    @Value("${application.security.jwt.secret-key-for-refresh}")
+    private String secretKeyForRefreshToken;
+
     @Value("${application.security.jwt.expiration}")
     private long expiredTime;
+
+    @Value("${application.security.jwt.expiration-for-refresh}")
+    private long expiredTimeForRefresh;
+
+    private static final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
     public Mono<String> generateToken(UserDetails userDetails) {
         return generateToken(secretKey, userDetails, expiredTime);
     }
 
+    public Mono<String> generateRefreshToken(UserDetails userDetails) {
+        return generateToken(secretKeyForRefreshToken, userDetails, expiredTimeForRefresh);
+    }
 
     private Mono<String> generateToken(String secret, UserDetails userDetails, long tokenLifetime) {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> claims = new HashMap<>();
         List<String> roleList = userDetails.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority)
                 .toList();
-        map.put("roles", roleList);
+        claims.put("roles", roleList);
 
         Date issuedDate = new Date();
         Date expiredDate = new Date(issuedDate.getTime() + tokenLifetime);
 
         return Mono.just(
                 Jwts.builder()
-                        .setClaims(map)
+                        .setClaims(claims)
                         .setSubject(userDetails.getUsername())
                         .setIssuedAt(issuedDate)
                         .setExpiration(expiredDate)
-                        .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                        .signWith(key)
                         .compact()
         );
     }
@@ -76,8 +87,6 @@ public class JwtService {
         Date expiration = extractClaim(token, Claims::getExpiration);
         return expiration.after(new Date());
     }
-
-
 
 
     public List<String> getRoles(String token) {
