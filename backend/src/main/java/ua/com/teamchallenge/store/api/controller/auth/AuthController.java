@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 import ua.com.teamchallenge.store.api.dto.auth.RegisterDto;
 import ua.com.teamchallenge.store.api.dto.response.auth.AuthDto;
-import ua.com.teamchallenge.store.config.security.AuthenticationService;
+import ua.com.teamchallenge.store.service.auth.AuthenticationService;
 
 @RestController
 @RequiredArgsConstructor

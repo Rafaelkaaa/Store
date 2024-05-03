@@ -1,4 +1,4 @@
-package ua.com.teamchallenge.store.config.security;
+package ua.com.teamchallenge.store.service.auth.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
@@ -9,16 +9,18 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import ua.com.teamchallenge.store.api.dto.auth.RegisterDto;
 import ua.com.teamchallenge.store.api.dto.response.auth.AuthDto;
+import ua.com.teamchallenge.store.config.security.JwtService;
 import ua.com.teamchallenge.store.persistence.entity.token.Token;
 import ua.com.teamchallenge.store.persistence.entity.user.User;
 import ua.com.teamchallenge.store.persistence.entity.user.person.Person;
 import ua.com.teamchallenge.store.persistence.repository.token.TokenRepository;
 import ua.com.teamchallenge.store.persistence.repository.user.UserRepository;
 import ua.com.teamchallenge.store.persistence.repository.user.person.PersonRepository;
+import ua.com.teamchallenge.store.service.auth.AuthenticationService;
 
 @Service
 @RequiredArgsConstructor
-public class AuthenticationService {
+public class AuthenticationServiceImpl implements AuthenticationService {
 
     private final ReactiveUserDetailsService userDetailsService;
     private final ReactiveAuthenticationManager authenticationManager;
@@ -28,6 +30,7 @@ public class AuthenticationService {
     private final TokenRepository tokenRepository;
     private final UserRepository<User> userRepository;
 
+    @Override
     public Mono<AuthDto> login(RegisterDto registerDto) {
         return userRepository.findByLogin(registerDto.getLogin())
                 .flatMap(user -> Mono.fromRunnable(() -> authenticationManager
@@ -46,6 +49,7 @@ public class AuthenticationService {
                 .switchIfEmpty(Mono.error(new RuntimeException("User not found")));
     }
 
+    @Override
     public Mono<AuthDto> register(RegisterDto registerDto) {
         return userRepository.existsByLogin(registerDto.getLogin())
                 .flatMap(exists -> {
