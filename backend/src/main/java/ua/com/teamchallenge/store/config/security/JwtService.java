@@ -33,8 +33,6 @@ public class JwtService {
     @Value("${application.security.jwt.expiration-for-refresh}")
     private long expiredTimeForRefresh;
 
-    private static final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-
     public Mono<String> generateToken(UserDetails userDetails) {
         return generateToken(secretKey, userDetails, expiredTime);
     }
@@ -60,7 +58,7 @@ public class JwtService {
                         .setSubject(userDetails.getUsername())
                         .setIssuedAt(issuedDate)
                         .setExpiration(expiredDate)
-                        .signWith(key)
+                        .signWith(SignatureAlgorithm.HS256, secret)
                         .compact()
         );
     }
