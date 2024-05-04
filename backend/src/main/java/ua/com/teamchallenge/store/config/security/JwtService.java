@@ -3,7 +3,6 @@ package ua.com.teamchallenge.store.config.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
-import java.security.Key;
+import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -21,27 +20,23 @@ import java.util.function.Function;
 @Component
 public class JwtService {
 
-    @Value("${application.security.jwt.secret-key}")
-    private String secretKey;
-
-    @Value("${application.security.jwt.secret-key-for-refresh}")
-    private String secretKeyForRefreshToken;
-
     @Value("${application.security.jwt.expiration}")
     private long expiredTime;
 
     @Value("${application.security.jwt.expiration-for-refresh}")
     private long expiredTimeForRefresh;
 
+    private final SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+
     public Mono<String> generateToken(UserDetails userDetails) {
-        return generateToken(secretKey, userDetails, expiredTime);
+        return generateToken(userDetails, expiredTime);
     }
 
     public Mono<String> generateRefreshToken(UserDetails userDetails) {
-        return generateToken(secretKeyForRefreshToken, userDetails, expiredTimeForRefresh);
+        return generateToken(userDetails, expiredTimeForRefresh);
     }
 
-    private Mono<String> generateToken(String secret, UserDetails userDetails, long tokenLifetime) {
+    private Mono<String> generateToken(UserDetails userDetails, long tokenLifetime) {
         Map<String, Object> claims = new HashMap<>();
         List<String> roleList = userDetails.getAuthorities()
                 .stream()
@@ -58,7 +53,7 @@ public class JwtService {
                         .setSubject(userDetails.getUsername())
                         .setIssuedAt(issuedDate)
                         .setExpiration(expiredDate)
-                        .signWith(SignatureAlgorithm.HS256, secret)
+                        .signWith(secretKey)
                         .compact()
         );
     }
@@ -66,7 +61,7 @@ public class JwtService {
     private Claims extractAllClaims(String token) {
         return Jwts
                 .parserBuilder()
-                .setSigningKey(getSigningKey())
+                .setSigningKey(secretKey)
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
@@ -86,13 +81,7 @@ public class JwtService {
         return expiration.after(new Date());
     }
 
-
     public List<String> getRoles(String token) {
         return extractAllClaims(token).get("roles", List.class);
-    }
-
-
-    private Key getSigningKey() {
-        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(secretKey));
     }
 }

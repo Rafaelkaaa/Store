@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
+import ua.com.teamchallenge.store.api.dto.auth.LoginDto;
 import ua.com.teamchallenge.store.api.dto.auth.RegisterDto;
 import ua.com.teamchallenge.store.api.dto.response.auth.AuthDto;
+import ua.com.teamchallenge.store.api.dto.response.auth.AuthLoginDto;
 import ua.com.teamchallenge.store.service.auth.AuthenticationService;
 
 @RestController
@@ -20,12 +22,12 @@ public class AuthController {
     private final AuthenticationService authenticationService;
 
     @PostMapping("/register")
-    public ResponseEntity<Mono<AuthDto>> register(@Validated  @RequestBody RegisterDto registerDto) {
+    public ResponseEntity<Mono<AuthDto>> register(@Validated @RequestBody RegisterDto registerDto) {
         return ResponseEntity.ok(authenticationService.register(registerDto));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Mono<AuthDto>> login(@Validated @RequestBody RegisterDto registerDto) {
-        return ResponseEntity.ok(authenticationService.login(registerDto));
+    public ResponseEntity<Mono<AuthLoginDto>> login(@Validated @RequestBody LoginDto loginDto) {
+        return ResponseEntity.ok(authenticationService.login(loginDto));
     }
 }

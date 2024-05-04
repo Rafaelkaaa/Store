@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RegisterDto {
+public class LoginDto {
 
     @NotBlank(message = "Email cannot be blank")
     @Email(message = "Invalid email format")
@@ -17,9 +17,4 @@ public class RegisterDto {
     @NotBlank(message = "Password cannot be blank")
     @Size(min = 6, max = 20, message = "Password must be between 6 and 20 characters")
     String password;
-
-    @NotBlank(message = "ConfirmPassword cannot be blank")
-    @Size(min = 6, max = 20, message = "Password must be between 6 and 20 characters")
-    String confirmPassword;
-
 }
