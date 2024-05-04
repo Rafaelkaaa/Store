@@ -19,9 +19,9 @@ bin/
 
 ### IntelliJ IDEA ###
 .idea
-.idea/
-.idea/*
 .idea/**
+.idea/*
+.idea/
 .idea/dataSources.local.xml
 .idea/workspace.xml
 *.iws
